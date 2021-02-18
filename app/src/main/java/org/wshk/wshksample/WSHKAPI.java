@@ -9,4 +9,6 @@ public class WSHKAPI {
     static String registerString() {
         return url + "register";
     }
+    static String listUsers() { return url + "users"; };
+    static String listUser(int id) { return url + "users/" + id; }
 }

@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     RequestQueue queue;
     EditText emailEditText, passwordEditText;
 
+    public void whateverClicked(View v){
+        Toast.makeText(MainActivity.this, "Helloworld", Toast.LENGTH_LONG).show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 //login success
                 Toast.makeText(MainActivity.this, "Login Success!", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(MainActivity.this, MemberListActivity.class);
+                startActivity(i);
             }
         }, new Response.ErrorListener(){
             @Override
